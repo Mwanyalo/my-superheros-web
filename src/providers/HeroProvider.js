@@ -18,29 +18,29 @@ class HeroProvider extends Component {
     this.setState({ loading: true, error: "" });
     const data = "batman";
 
-    // fetch(`https://superheroapi.com/api/248393186523534/search/${data}`)
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     // this.setState({ todos: data });
-    //     console.log(data);
-    //   })
-    //   .catch(console.log);
-
-    api
-      .get(`/search/${data}`)
-      .then((res) => {
-        const { data, status } = res;
-        this.setState({ loading: false });
-        console.log(data, status);
-        if (status === 200) {
-          this.setState({ heroes: data, message: "ok" });
-        }
+    fetch(`https://superheroapi.com/api/248393186523534/search/${data}`)
+      .then((res) => res.json())
+      .then((data) => {
+        // this.setState({ todos: data });
+        console.log(data);
       })
-      .catch((error) => {
-        console.log("error 101:", error);
-        this.setState({ error: error });
-        this.setState({ loading: false });
-      });
+      .catch(console.log);
+
+    // api
+    //   .get(`/search/${data}`)
+    //   .then((res) => {
+    //     const { data, status } = res;
+    //     this.setState({ loading: false });
+    //     console.log(data, status);
+    //     if (status === 200) {
+    //       this.setState({ heroes: data, message: "ok" });
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     console.log("error 101:", error);
+    //     this.setState({ error: error });
+    //     this.setState({ loading: false });
+    //   });
   };
 
   // postRecommendedUsers = (data: any) => {
