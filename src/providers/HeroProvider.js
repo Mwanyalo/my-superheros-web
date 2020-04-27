@@ -37,6 +37,7 @@ class HeroProvider extends Component {
         }
       })
       .catch((error) => {
+        console.log("error 101:", error);
         this.setState({ error: error });
         this.setState({ loading: false });
       });
