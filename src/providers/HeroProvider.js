@@ -18,7 +18,9 @@ class HeroProvider extends Component {
     this.setState({ loading: true, error: "" });
     const data = "batman";
 
-    fetch(`https://superheroapi.com/api/248393186523534/search/${data}`)
+    fetch(`https://superheroapi.com/api/248393186523534/search/${data}`, {
+      mode: "no-cors",
+    })
       .then((res) => res.json())
       .then((data) => {
         // this.setState({ todos: data });
