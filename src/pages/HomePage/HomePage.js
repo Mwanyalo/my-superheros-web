@@ -9,37 +9,36 @@ class HomePage extends Component {
     search: "",
   };
 
-  componentDidMount() {
-    console.log(this.props);
-  }
-
   handleChange = (event) => {
-    const { value } = event.target;
+    this.setState({ search: event.target.value });
+  };
+
+  searchHeroes = () => {
+    console.log(this.state.search);
     const { searchHeroesName } = this.props;
-    this.setState({ search: value }, () => {
-      searchHeroesName(this.state.search);
-    });
+    searchHeroesName(this.state.search);
   };
 
   render() {
     return (
-      <div>
-        <div>
+      <div className="home-page">
+        <div className="heroes-logo">
           <img src={Logo} alt="my superheroes app" />
         </div>
-        <div className="search-form">
-          <form>
-            <input
-              className="search-input"
-              placaholder="search"
-              value={this.state.search}
-              onChange={this.handleChange}
-            />
-            <button type="submit">
-              <FaSearch size={"22px"} />
-            </button>
-          </form>
-        </div>
+        <h3 className="description">
+          Learn more about your favorite superhero
+        </h3>
+        <form>
+          <input
+            className="search-input"
+            placeholder="Search Name"
+            value={this.state.search}
+            onChange={this.handleChange}
+          />
+        </form>
+        <button onClick={() => this.searchHeroes()}>
+          <FaSearch /> Search
+        </button>
       </div>
     );
   }

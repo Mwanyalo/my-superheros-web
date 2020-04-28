@@ -1,43 +1,58 @@
-.search-form {
-  display: flex;
-  flex: 1;
-  flex-wrap: wrap;
-  max-width: 600px;
-  margin: 0 auto;
-  border: 1px solid rgba(223, 225, 229, 0.856);
-  border-radius: 30px;
+.home-page {
+  text-align: center;
+}
+.description {
+  text-transform: uppercase;
+  color: #fff;
 }
 
-.search-form:hover {
+.heroes-logo img {
+  background-color: #fff;
+}
+.search-input {
+  height: 34px;
+  width: 350px;
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+  word-wrap: break-word;
+  outline: none;
+  font-size: 22px;
+  text-align: center;
+  border: 1px solid rgba(223, 225, 229, 0.856);
+  border-radius: 30px;
+  background-color: #fff;
+}
+
+.search-input:hover {
   box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
   border-color: rgba(223, 225, 229, 0);
 }
 
-.search-input {
-  background-color: transparent;
-  flex-grow: 2;
-  height: 34px;
-  width: 500px;
-  border: none;
-  margin-left: 10px;
-  padding: 0;
-  color: rgba(0, 0, 0, 0.87);
-  word-wrap: break-word;
+.home-page button {
+  color: #fff;
+  background-color: #ff4e5d;
+  width: 150px;
   outline: none;
-  -webkit-tap-highlight-color: transparent;
-  font-size: 16px;
-}
-
-.search-form button {
-  height: 100%;
-  width: 50px;
-  background: 0 0;
   border: none;
-  color: #08f;
-  -webkit-appearance: none;
+  border-radius: 10px;
+  padding: 6px 20px;
+  margin: 20px;
   cursor: pointer;
 }
 
-.search-form button:focus {
-  outline: 0;
+.home-page button:hover {
+  box-shadow: 0px 0px 10px 0px #ff4e5d;
+}
+
+@media only screen and (max-width: 549px) {
+  .search-input {
+    height: 24px;
+    width: 200px;
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  .home-page button {
+    width: 120px;
+  }
 }

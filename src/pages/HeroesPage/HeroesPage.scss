@@ -1,10 +1,19 @@
+.heroes-body h4 {
+  color: #fff;
+}
+
+.heroes-list {
+  margin: 0 auto;
+}
 .frame {
-  margin: 0 8px 8px 0;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 0 10px 10px 0;
   display: none;
   border-radius: 12px;
-  min-width: 180px;
-  max-width: 230px;
-  height: fit-content;
+  min-width: 160px;
+  max-width: 220px;
+  height: min-content;
   color: rgba(0, 0, 0, 1);
   background-color: #e7e6eb;
   z-index: 0;
@@ -43,9 +52,8 @@
   padding: 0;
   margin: 0;
   text-align: center;
-  text-transform: uppercase;
-  font-size: 28px;
-  font-weight: 100;
+  font-size: 16px;
+  font-weight: 600;
   color: #000042;
   -webkit-transform: skewX(14deg);
   transform: skewX(14deg);

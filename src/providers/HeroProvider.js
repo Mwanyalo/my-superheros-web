@@ -9,81 +9,52 @@ class HeroProvider extends Component {
   state = {
     hero: {},
     heroes: [],
+    name: "",
+    id: "",
     loading: false,
     message: "",
     error: "",
   };
 
-  searchHeroesName = () => {
-    this.setState({ loading: true, error: "" });
-    const data = "batman";
-
-    fetch(`https://superheroapi.com/api/248393186523534/search/${data}`, {
-      mode: "no-cors",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        // this.setState({ todos: data });
-        console.log(data);
+  searchHeroesName = (name) => {
+    this.setState({ name: name, hero: {}, loading: true, error: "" });
+    api
+      .get(`/search/${name}`)
+      .then((res) => {
+        const { data, status } = res;
+        this.setState({ loading: false });
+        console.log(res);
+        if (status === 200 && data.response === "success") {
+          history.push(`/search/${name}`);
+          this.setState({ heroes: data.results, message: data.response });
+        } else {
+          this.setState({ error: data.error });
+        }
       })
-      .catch(console.log);
-
-    // api
-    //   .get(`/search/${data}`)
-    //   .then((res) => {
-    //     const { data, status } = res;
-    //     this.setState({ loading: false });
-    //     console.log(data, status);
-    //     if (status === 200) {
-    //       this.setState({ heroes: data, message: "ok" });
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     console.log("error 101:", error);
-    //     this.setState({ error: error });
-    //     this.setState({ loading: false });
-    //   });
+      .catch((error) => {
+        console.log("error 101:", error);
+        this.setState({ error: error });
+        this.setState({ loading: false });
+      });
   };
 
-  // postRecommendedUsers = (data: any) => {
-  //   this.setState({ loading: true, error: "" });
-  //   api
-  //     .post("/ticket/recommendUsers", data)
-  //     .then((res: any) => {
-  //       this.setState({ loading: false });
-  //       history.push(`/view-tickets`);
-  //     })
-  //     .catch(error => {
-  //       console.log(error);
-  //       this.setState({ loading: false });
-  //     });
-  // };
-
-  // validateOTP = (data) => {
-  //   this.setState({ loading: true, error: "" });
-  //   api
-  //     .put(url, data)
-  //     .then((res) => {
-  //       const { status } = res;
-  //       this.setState({ loading: false });
-  //       if (status === 200) {
-  //         this.setState({ message: "Login Successful" }, () => {
-  //           const key = `tok${this.state.phone}en`;
-  //           localStorage.setItem("accKeySession", key);
-  //           localStorage.removeItem("phone");
-  //         });
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       this.setState({ error: "Invalid code, please try again" });
-  //       this.setState({ loading: false });
-  //     });
-  // };
-
-  // logout = () => {
-  //   localStorage.removeItem("accKeySession");
-  //   this.setState({ loading: false, message: "", phone: "", error: "" });
-  // };
+  searchHeroById = (hid) => {
+    this.setState({ id: hid, loading: true, error: "" });
+    api
+      .get(`/${hid}`)
+      .then((res) => {
+        const { data, status } = res;
+        this.setState({ loading: false });
+        if (status === 200) {
+          this.setState({ hero: data, message: "ok" });
+        }
+      })
+      .catch((error) => {
+        console.log("error 101:", error);
+        this.setState({ error: error });
+        this.setState({ loading: false });
+      });
+  };
 
   render() {
     return (
@@ -92,8 +63,7 @@ class HeroProvider extends Component {
           ...this.state,
           history: history,
           searchHeroesName: this.searchHeroesName,
-          // validateOTP: this.validateOTP,
-          // logout: this.logout,
+          searchHeroById: this.searchHeroById,
         }}
       >
         {this.props.children}
