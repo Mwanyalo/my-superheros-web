@@ -4,7 +4,7 @@ import { FaSearch } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import Logo from "../../assets/logo2.png";
 
-const Header = (props) => (
+const Header = () => (
   <header className="toolbar">
     <div className="toolbar-logo">
       <img src={Logo} alt="my superheroes app" />

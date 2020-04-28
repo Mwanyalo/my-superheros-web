@@ -14,7 +14,6 @@ class HomePage extends Component {
   };
 
   searchHeroes = () => {
-    console.log(this.state.search);
     const { searchHeroesName } = this.props;
     searchHeroesName(this.state.search);
   };

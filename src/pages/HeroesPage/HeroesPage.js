@@ -22,7 +22,7 @@ class HeroesPage extends Component {
 
   render() {
     const { heroes = [] } = this.props;
-    console.log(heroes);
+
     return (
       <div className="heroes-body">
         <Header />

@@ -16,6 +16,12 @@ class HeroProvider extends Component {
     error: "",
   };
 
+  resetErrorState = () => {
+    setTimeout(() => {
+      this.setState({ error: "" });
+    }, 2500);
+  };
+
   searchHeroesName = (name) => {
     this.setState({ name: name, hero: {}, loading: true, error: "" });
     api
@@ -23,7 +29,6 @@ class HeroProvider extends Component {
       .then((res) => {
         const { data, status } = res;
         this.setState({ loading: false });
-        console.log(res);
         if (status === 200 && data.response === "success") {
           history.push(`/search/${name}`);
           this.setState({ heroes: data.results, message: data.response });
@@ -32,8 +37,7 @@ class HeroProvider extends Component {
         }
       })
       .catch((error) => {
-        console.log("error 101:", error);
-        this.setState({ error: error });
+        this.setState({ error: error.message });
         this.setState({ loading: false });
       });
   };
@@ -47,11 +51,12 @@ class HeroProvider extends Component {
         this.setState({ loading: false });
         if (status === 200) {
           this.setState({ hero: data, message: "ok" });
+        } else {
+          this.setState({ error: data.error });
         }
       })
       .catch((error) => {
-        console.log("error 101:", error);
-        this.setState({ error: error });
+        this.setState({ error: error.message });
         this.setState({ loading: false });
       });
   };
@@ -64,6 +69,7 @@ class HeroProvider extends Component {
           history: history,
           searchHeroesName: this.searchHeroesName,
           searchHeroById: this.searchHeroById,
+          resetErrorState: this.resetErrorState,
         }}
       >
         {this.props.children}

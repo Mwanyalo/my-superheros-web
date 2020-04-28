@@ -1,0 +1,31 @@
+.message-body {
+  align-items: center;
+  background: linear-gradient(to bottom right, #07063000 0%, #07045400 100%);
+  min-height: 100vh;
+  position: fixed;
+  top: 60;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+.message-card {
+  display: block;
+  position: relative;
+  width: 300px;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 0 30px rgba(206, 206, 206, 0.25);
+  text-align: center;
+  background-color: #fff;
+  margin: 0 auto;
+  word-wrap: break-word;
+
+  z-index: 1000;
+  p {
+    color: rgb(255, 62, 62);
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 1px;
+  }
+}
