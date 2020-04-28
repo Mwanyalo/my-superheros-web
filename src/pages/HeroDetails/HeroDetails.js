@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./HeroDetails.scss";
 import placeholder from "../../assets/placeholder.png";
+import Header from "../../components/Header/Header";
 
 class HeroDetails extends Component {
   componentDidMount() {
@@ -23,6 +24,7 @@ class HeroDetails extends Component {
 
     return (
       <div className="hero-content">
+        <Header />
         <div className="profile-section">
           <div className="hero-profile">
             <img

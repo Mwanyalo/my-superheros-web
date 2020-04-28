@@ -22,25 +22,24 @@ p {
 }
 
 .hero-profile {
-  width: 350px;
   box-sizing: content-box;
-  border: 4px solid;
+  border: 4px solid #9a9a9a;
   margin-bottom: 6px;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: flex-end;
   align-items: center;
   overflow: hidden;
 }
 
 .hero-profile img {
-  width: 70%;
-  height: auto;
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
   background-repeat: no-repeat;
 }
 
 .hero-title {
-  color: #0159de;
+  color: #29abe2;
   text-transform: uppercase;
   font-size: 12px;
   font-size: 0.75rem;
@@ -57,7 +56,7 @@ p {
 }
 .hero-apperance p span {
   text-transform: uppercase;
-  color: #0159de;
+  color: #fff;
   font-size: 12px;
   font-size: 0.75rem;
   flex-shrink: 0;
@@ -71,7 +70,7 @@ p {
 .hero-header {
   text-transform: uppercase;
   font-weight: 700;
-  color: #8799a6;
+  color: #5cfc7b;
   font-size: 20px;
   padding: 6px;
 }
@@ -86,22 +85,22 @@ p {
 }
 
 .power-stats {
-  display: grid;
-  grid-gap: 1.6rem;
-  grid-auto-flow: column;
-  justify-content: flex-start;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
 }
 
 .power-stat {
-  font-weight: 900;
+  font-weight: 500;
   margin-bottom: 1.6rem;
   text-transform: uppercase;
   margin: 6px;
+  width: 100%;
 }
 
 .power-stat-name {
   font-size: 1.2rem;
-  color: #9a9a9a;
+  color: #29abe2;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -109,13 +108,13 @@ p {
 
 .stat-progress {
   width: 100%;
-  border: 1px solid #ccc !important;
+  border: 1px solid #fff;
 }
 
 .power-stat-bar {
   height: 10px;
   color: white;
-  background-color: #9e9e9e !important;
+  background-color: #5cfc7b;
 }
 
 .hero-section {
@@ -127,6 +126,7 @@ p {
   font-size: 20px;
   font-weight: 700;
   padding: 6px;
+  background: rgba(0, 0, 0, 0.116);
 }
 
 .section-details {
@@ -135,7 +135,7 @@ p {
   vertical-align: top;
   margin: -2px;
   display: table;
-  padding: 6px;
+  padding: 10px;
 }
 
 .section-details tr {
@@ -150,6 +150,7 @@ p {
   .power-stats {
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     grid-auto-flow: unset;
+    flex-wrap: wrap;
   }
 }
 
@@ -157,6 +158,7 @@ p {
   .hero-content {
     flex-flow: row wrap;
   }
+
   .profile-section {
     flex: 1 0 100%;
     justify-content: center;
@@ -166,5 +168,8 @@ p {
 @media only screen and (min-width: 549px) {
   .power-stats {
     grid-gap: 2.4rem;
+  }
+  .hero-profile {
+    width: 350px;
   }
 }

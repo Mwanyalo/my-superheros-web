@@ -1,15 +1,17 @@
 import React from "react";
 import "./Header.scss";
+import { FaSearch } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
+import Logo from "../../assets/logo2.png";
 
 const Header = (props) => (
-  <header className="Toolbar">
-    {/* <DrawerToggle clicked={props.drawerToggleClicked} /> */}
+  <header className="toolbar">
     <div className="toolbar-logo">
-      <a href="/home">
-        {/* <img src={logo} className="logoImage" alt="shujaaz" /> */}
-      </a>
+      <img src={Logo} alt="my superheroes app" />
     </div>
-    <nav className="DesktopOnly">{/* <NavigationItems /> */}</nav>
+    <NavLink to={"/"}>
+      <FaSearch />
+    </NavLink>
   </header>
 );
 

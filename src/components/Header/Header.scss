@@ -1,4 +1,4 @@
-.Toolbar {
+.toolbar {
   height: 56px;
   width: 100%;
   position: fixed;
@@ -14,22 +14,28 @@
   color: white;
 }
 
-.Toolbar nav {
-  height: 100%;
+.toolbar a {
+  font-size: 24px;
+  text-decoration: none;
+  color: #fff;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-left: 1px solid #ffffff2c;
+  border-right: 1px solid #ffffff2c;
+  margin-right: 20px;
+  cursor: pointer;
 }
 
 .toolbar-logo {
   left: 0rem;
   position: relative;
+  width: auto;
+  height: 50px;
 }
 
-.toolbar-logo a {
-  color: #ff4e5d;
-  text-decoration: none;
-  font-size: 1.5rem;
-  left: 1rem;
-}
-.logoImage {
-  width: auto;
-  height: 26px;
+.toolbar-logo img {
+  height: 54px;
 }
