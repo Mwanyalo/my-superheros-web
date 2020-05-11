@@ -28,7 +28,7 @@ class HomePage extends Component {
           Learn more about your favorite superhero
         </h3>
         <form>
-          <label for="search"></label>
+          <label htmlFor="search"></label>
           <input
             id="search"
             className="search-input"
