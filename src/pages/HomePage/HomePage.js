@@ -28,8 +28,11 @@ class HomePage extends Component {
           Learn more about your favorite superhero
         </h3>
         <form>
+          <label for="search"></label>
           <input
+            id="search"
             className="search-input"
+            type="text"
             placeholder="Search Name"
             value={this.state.search}
             onChange={this.handleChange}
