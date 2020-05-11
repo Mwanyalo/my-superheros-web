@@ -14,6 +14,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 API: [API documentation](https://superheroapi.com/)
 
+### My Superheroes android repo
+
+> Android version: => [Repo](https://github.com/Mwanyalo/MySuperheroApp)
+
+### My Superheroes android apk
+
+> The latest apk can be downloaded here: => [APK File](https://github.com/Mwanyalo/MySuperheroApp/tree/master/release)
+
 ### User Journey
 
 [Word Doc](https://docs.google.com/document/d/1Ht9wh-Y9RPxQiLzr6oWBsYZRUanfFsYZAI800GyYOko/edit)
